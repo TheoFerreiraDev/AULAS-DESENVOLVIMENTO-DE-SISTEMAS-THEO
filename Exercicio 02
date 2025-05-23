@@ -14,43 +14,16 @@ print(f'A soma dos 5 números é de {n1+n2+n3+n4+n5}')
 
 #2
 
+n1 = int(input("Digite o primeiro número: "))
+n2 = int(input("Digite o segundo número: "))
+n3 = int(input("Digite o terceiro número: "))
+n4 = int(input("Digite o quarto número: "))
+L = [n1,n2,n3,n4]
 
-n1 = float(input("Digite o primeiro número: "))
-n2 = float(input("Digite o segundo número: "))
-n3 = float(input("Digite o terceiro número: "))
-n4 = float(input("Digite o quarto número: "))
+maior = max(L)
+menor = min(L)
 
-
-maior = n1
-if n2 > maior:
-    maior = n2
-if n3 > maior:
-    maior = n3
-if n4 > maior:
-    maior = n4
-
-
-menor = n1
-if n2 < menor:
-    menor = n2
-if n3 < menor:
-    menor = n3
-if n4 < menor:
-    menor = n4
-
-
-print(f"O maior número é: {maior}")
-print(f"O menor número é: {menor}")
-
-
-
-
-
-
-
-
-
-
+print(f"O maior número é {maior} e o menor é {menor}")
 
 
 
@@ -100,37 +73,23 @@ print(f'Sua média é: {media/4}')
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #6
 
+n = int(input("Digite um número para ver sua tabuada: "))
 
-numero = int(input("Digite um número para ver sua tabuada: "))
-
-
-n = 1
-while n <= 10:
-    resultado = numero * n
-    print(f"{numero} x {n} = {resultado}")
-    i += 1
-
+print(f"{n} x 1 = {n*1}")
+print(f"{n} x 2 = {n*2}")
+print(f"{n} x 3 = {n*3}")
+print(f"{n} x 4 = {n*4}")
+print(f"{n} x 5 = {n*5}")
+print(f"{n} x 6 = {n*6}")
+print(f"{n} x 7 = {n*7}")
+print(f"{n} x 8 = {n*8}")
+print(f"{n} x 9 = {n*9}")
+print(f"{n} x 10 = {n*10}")
 
 #7
 n1 = int(input("Digite um número: "))
-
 
 n2 = 1
 while n2 <= n1:
@@ -159,12 +118,9 @@ nome1 = input("Digite o primeiro nome: ")
 nome2 = input("Digite o segundo nome: ")
 nome3 = input("Digite o terceiro nome: ")
 
-
 nomes = [nome1, nome2, nome3]
 
-
 nomes.sort()
-
 
 print("Nomes em ordem alfabética:")
 print(nomes[0])
