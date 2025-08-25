@@ -1,3 +1,5 @@
+#Théo Ferreira - Lianara Vitoria - Maria Luconi
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Dict
@@ -16,9 +18,9 @@ class Aluno(BaseModel):
 
 # Banco de dados em memória (dicionário)
 alunos_db: Dict[int, Aluno] = {
-    1: Aluno(nome= "João Guilherme De Souza", turma="1 ano 06", idade="15"),
-    2: Aluno(nome= "Julia Marina Carvalho", turma="2 ano 02", idade="16"),
-    3: Aluno(nome= "Pedro Luis Oliveira", turma="3 ano 04", idade="18"),
+    1: Aluno(nome= "João Guilherme De Souza", turma="1 ano 06", idade=15),
+    2: Aluno(nome= "Julia Marina Carvalho", turma="2 ano 02", idade=16),
+    3: Aluno(nome= "Pedro Luis Oliveira", turma="3 ano 04", idade=18),
 }
 
 @app.get("/")
@@ -52,7 +54,7 @@ def buscar_aluno(matricula: int):
 def atualizar_aluno(matricula: int, aluno: Aluno):
     if matricula not in alunos_db:
         raise HTTPException(status_code=404, detail="Aluno não encontrado.")
-    alunos_db[matricula] = aluno.dict()
+    alunos_db [matricula] = aluno
     return {"mensagem": "Cadastro atualizado com sucesso!", "aluno": aluno}
 
 # Deletar cadastro
