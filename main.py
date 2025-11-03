@@ -131,3 +131,8 @@ async def deletar_tarefa(tarefa_id: str):
     del db_tarefas[tarefa_id]
     
     return None
+
+#python -m uvicorn main:app --reload
+#pip install "uvicorn[standard]"  
+#pip install fastapi      
+#pip install uvicorn                
