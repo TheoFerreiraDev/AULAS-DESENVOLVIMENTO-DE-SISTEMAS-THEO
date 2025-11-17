@@ -48,7 +48,7 @@ def _generate_id() -> str:
     status_code=status.HTTP_201_CREATED,
     summary="Cria uma nova tarefa"
 )
-async def criar_tarefa(tarefa_data: TarefaCreate):
+ def criar_tarefa(tarefa_data: TarefaCreate):
     
     novo_id = _generate_id()
     
@@ -67,7 +67,7 @@ async def criar_tarefa(tarefa_data: TarefaCreate):
     response_model=List[Tarefa],
     summary="Lista todas as tarefas"
 )
-async def listar_tarefas():
+ def listar_tarefas():
     return list(db_tarefas.values())
 
 @app.get(
@@ -75,7 +75,7 @@ async def listar_tarefas():
     response_model=Tarefa,
     summary="Obtém uma tarefa específica por ID"
 )
-async def obter_tarefa(tarefa_id: str):
+ def obter_tarefa(tarefa_id: str):
     """Retorna a tarefa correspondente ao ID fornecido."""
     
     tarefa = _get_tarefa_dict(tarefa_id)
@@ -93,7 +93,7 @@ async def obter_tarefa(tarefa_id: str):
     response_model=Tarefa,
     summary="Atualiza uma tarefa existente"
 )
-async def atualizar_tarefa(tarefa_id: str, tarefa_data: TarefaUpdate):
+ def atualizar_tarefa(tarefa_id: str, tarefa_data: TarefaUpdate):
     
     tarefa_existente = _get_tarefa_dict(tarefa_id)
     
@@ -119,7 +119,7 @@ async def atualizar_tarefa(tarefa_id: str, tarefa_data: TarefaUpdate):
     status_code=status.HTTP_204_NO_CONTENT,
     summary="Deleta uma tarefa"
 )
-async def deletar_tarefa(tarefa_id: str):
+ def deletar_tarefa(tarefa_id: str):
     """Remove uma tarefa pelo ID."""
     
     if tarefa_id not in db_tarefas:
